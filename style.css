@@ -1,0 +1,2881 @@
+/* Basic Reset & Global Styles */
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=League+Spartan:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Sora", sans-serif;
+  color: #333;
+  background-color: #f8f8f8; /* Light background */
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* Background Pattern (replace with your actual image path) */
+.hero-section {
+  background-image: url("https://deleteanxietyworkshop.com/wp-content/uploads/2025/09/Rectangle-8.png"); /* Placeholder, find a subtle pattern or create your own */
+  --background-overlay: "";
+  background-position: center center;
+  background-repeat: repeat;
+  background-size: 150px; /* Adjust size as needed */
+  padding: 10px 0 0px; /* Top, bottom padding */
+}
+
+/* Main Headline */
+.main-headline {
+  font-size: 3.1em; /* Adjust as needed */
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  /* Slight horizontal padding for smaller screens */
+}
+
+.main-headline .highlight-blue {
+  color: #007bff; /* Bright blue from the screenshot */
+}
+
+/* Social Proof Text */
+.social-proof-text {
+  font-size: 1.4em;
+  color: #666;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+/* Content Wrapper (Video & Info Cards) */
+.content-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  justify-content: center;
+  gap: 40px; /* Space between video and info cards */
+  margin-bottom: 50px;
+}
+
+/* Video Container */
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 550px; /* Max width for the video */
+  aspect-ratio: 16 / 7; /* Standard YouTube aspect ratio */
+  border-radius: 15px;
+  overflow: hidden; /* Ensures video corners are rounded */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  z-index: 1; /* Below overlays initially */
+}
+
+/* Video Overlays (Custom styling to mimic the YouTube player from screenshot) */
+.video-overlay-top,
+.video-overlay-bottom {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  color: #fff;
+  font-family: "Sora", sans-serif;
+  font-size: 0.9em;
+  box-sizing: border-box; /* Include padding in width calculation */
+  z-index: 2; /* Above the iframe */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0) 100%
+  ); /* Fading gradient */
+}
+
+.video-overlay-top {
+  top: 0;
+  justify-content: flex-start;
+  gap: 10px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.video-overlay-bottom {
+  bottom: 0;
+  justify-content: space-between;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.instructor-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+
+.video-title {
+  font-weight: 500;
+}
+
+.share-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-left: auto; /* Pushes share button to the right */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.share-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.video-cta {
+  font-size: 2em; /* Big "AND" text */
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.youtube-logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.6em;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.youtube-logo:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Info Cards Wrapper */
+.info-cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 400px; /* Max width for info cards */
+}
+
+.info-card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none; /* For the link card */
+  color: #333; /* For the link card */
+}
+
+.info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.info-icon-wrapper {
+  width: 45px;
+  height: 45px;
+  border-radius: 8px; /* Slightly rounded square */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4em;
+  color: #fff;
+}
+
+.info-icon-wrapper.blue-bg {
+  background-color: #e0f2ff; /* Very light blue for icon background */
+  color: #007bff; /* Bright blue icon color */
+}
+
+.info-icon-wrapper.white-bg {
+  background-color: #fff; /* White background for icon (for live zoom card) */
+  color: #007bff; /* Bright blue icon color */
+}
+
+.info-text-wrapper p {
+  margin: 0;
+  padding: 0;
+}
+
+.info-label {
+  font-size: 0.9em;
+  color: #888;
+  font-weight: 400;
+}
+
+.info-value {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Specific styling for Live on Zoom card */
+.live-zoom-card {
+  background-color: #007bff; /* Bright blue background */
+  color: #fff;
+  justify-content: center; /* Center content in this card */
+  padding: 20px; /* More padding for a bolder look */
+}
+
+.live-zoom-card .info-icon-wrapper.white-bg {
+  background-color: #fff; /* White circle for the icon */
+  color: #007bff; /* Blue icon inside */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Make it a circle */
+  font-size: 1.6em;
+}
+
+.live-zoom-card .info-text-wrapper {
+  text-align: center;
+}
+
+.live-zoom-card .live-label {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1; /* Reduce space */
+}
+
+.live-zoom-card .zoom-platform {
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.main-cta-button {
+  display: inline-block;
+  background: linear-gradient(270deg, #007bff, #0056b3, #007bff);
+  background-size: 200% 200%;
+  animation: gradientRun 3s ease infinite, pulse 3s ease-in-out infinite,
+    zoomInOut 6s ease-in-out infinite;
+  color: #fff;
+  padding: 18px 0px;
+  border-radius: 18px;
+  text-decoration: none;
+  font-size: 2em;
+  font-weight: 700;
+  min-width: 900px;
+  border: none;
+  cursor: pointer;
+  font-family: "Sora", sans-serif;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  z-index: 1;
+  box-shadow: 0 12px 35px rgba(173, 173, 173, 0.9);
+  /* 🟦 3D Layered Shadow */
+}
+
+/* Hover: gentle lift only */
+.main-cta-button:hover {
+  transform: translateY(-5px);
+}
+
+@keyframes zoomInOut {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+@keyframes gradientRun {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+  .main-headline {
+    font-size: 2.8em;
+  }
+  .content-wrapper {
+    flex-direction: column; /* Stack video and info cards vertically */
+    align-items: center;
+  }
+  .video-container,
+  .info-cards-wrapper {
+    max-width: 100%; /* Adjust width for smaller screens */
+  }
+  .main-cta-button {
+    min-width: 300px;
+    font-size: 1.3em;
+    padding: 15px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-headline {
+    font-size: 2.2em;
+  }
+  .video-container {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    height: 200px; /* Max width for the video */
+    aspect-ratio: 16 / 7; /* Standard YouTube aspect ratio */
+    border-radius: 15px;
+    overflow: hidden; /* Ensures video corners are rounded */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  .social-proof-text {
+    font-size: 1em;
+  }
+  .hero-section {
+    padding: 40px 0 60px;
+    padding-bottom: 0;
+  }
+  .content-wrapper {
+    gap: 25px;
+  }
+  .info-card {
+    padding: 12px 15px;
+  }
+  .live-zoom-card {
+    padding: 15px;
+  }
+  .live-zoom-card .live-label {
+    font-size: 1.1em;
+  }
+  .main-cta-button {
+    min-width: 550px;
+    font-size: 1.2em;
+    padding: 20px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-headline {
+    font-size: 1.7em;
+    margin-top: 0;
+  }
+  .social-proof-text {
+    font-size: 0.9em;
+  }
+  .video-overlay-top,
+  .video-overlay-bottom {
+    font-size: 0.8em;
+    padding: 8px 10px;
+  }
+  .share-button i,
+  .youtube-logo i {
+    font-size: 0.9em;
+  }
+  .video-cta {
+    font-size: 1.5em;
+  }
+  .main-cta-button {
+    font-size: 1.1em;
+    line-height: 1.2;
+    padding: 20px 20px;
+    min-width: 300px; /* Make button full width on very small screens */
+    box-sizing: border-box;
+  }
+  .info-icon-wrapper {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2em;
+  }
+  .live-zoom-card .info-icon-wrapper.white-bg {
+    width: 40px;
+    height: 40px;
+    font-size: 1.4em;
+  }
+}
+
+/* --- Commitment Section --- */
+.commitment-section {
+  background-image: url("https://deleteanxietyworkshop.com/wp-content/uploads/2025/09/Rectangle-8.png"); /* Placeholder, find a subtle pattern or create your own */
+  --background-overlay: "";
+  background-position: center center; /* Continue background pattern */
+  background-repeat: repeat;
+  background-size: 150px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.pre-headline {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 1px;
+  font-weight: 500;
+}
+
+.pre-headline-secondary {
+  font-size: 1.2em;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 0px;
+  font-weight: 600;
+}
+
+.section-headline {
+  font-size: 2.2em;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 60px;
+  line-height: 1.3;
+  border-top: 1px solid #a7a2a2;
+  padding-top: 50px;
+}
+
+.section-headline .highlight-blue {
+  color: #007bff; /* Bright blue from the screenshot */
+}
+
+/* Testimonials Grid */
+.testimonials-grid-image {
+  display: grid;
+  /* This will create two columns, with the first column being narrower for the long testimonial */
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  justify-content: center;
+  align-items: start; /* Align items to the top of their grid cell */
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+.testimonial-image-card {
+  background-color: #fff;
+  overflow: hidden; /* Ensures image corners are rounded */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  height: auto; /* Allow height to be determined by image content */
+  display: flex; /* To contain the image nicely */
+}
+
+.testimonial-screenshot {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+  object-fit: cover; /* Ensures image fills the container */
+}
+
+/* Specific styling for the first card spanning multiple rows */
+.testimonial-image-card.full-span-image {
+  grid-row: span 3; /* Span 3 rows to match the screenshot */
+  /* On larger screens, this will naturally place it on the left */
+}
+
+/* --- Positioning for other cards to match screenshot --- */
+@media (min-width: 993px) {
+  /* Apply on larger screens where grid has two columns */
+  .testimonial-image-card:nth-of-type(2) {
+    /* Nupur Gupta/Taneja Sir */
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+  .testimonial-image-card:nth-of-type(3) {
+    /* Saurabh Kaushal */
+    grid-column: 1 / 2;
+    grid-row: 4 / 5; /* Place below Mainak Roy */
+  }
+  .testimonial-image-card:nth-of-type(4) {
+    /* Nupur Gupta/one solution */
+    grid-column: 2 / 3;
+    grid-row: 2 / 3; /* Below Nupur Gupta/Taneja Sir */
+  }
+  .testimonial-image-card:nth-of-type(5) {
+    /* Dilraj Singh Bhullar */
+    grid-column: 1 / 2;
+    grid-row: 5 / 6; /* Below Saurabh Kaushal */
+  }
+  .testimonial-image-card:nth-of-type(6) {
+    /* Yogesh Tamboli */
+    grid-column: 2 / 3;
+    grid-row: 3 / 4; /* Below Nupur Gupta/one solution */
+  }
+  .testimonial-image-card:nth-of-type(7) {
+    /* Krishnakumar Nair */
+    grid-column: 1 / 2;
+    grid-row: 6 / 7; /* Below Dilraj Singh Bhullar */
+  }
+  .testimonial-image-card:nth-of-type(8) {
+    /* Harish H N */
+    grid-column: 2 / 3;
+    grid-row: 4 / 5; /* Below Yogesh Tamboli */
+  }
+}
+
+/* --- Responsive Adjustments for Testimonial Images --- */
+@media (max-width: 992px) {
+  .testimonials-grid-image {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+    padding: 0 10px;
+    gap: 25px;
+    margin-bottom: 20px;
+  }
+  .testimonial-image-card.full-span-image {
+    grid-row: auto; /* Reset span on smaller screens */
+  }
+  /* Reset all explicit grid positions for smaller screens to allow natural flow */
+  .testimonial-image-card:nth-of-type(2),
+  .testimonial-image-card:nth-of-type(3),
+  .testimonial-image-card:nth-of-type(4),
+  .testimonial-image-card:nth-of-type(5),
+  .testimonial-image-card:nth-of-type(6),
+  .testimonial-image-card:nth-of-type(7),
+  .testimonial-image-card:nth-of-type(8) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+/* --- Responsive Adjustments for Commitment Section --- */
+@media (max-width: 992px) {
+  .section-headline {
+    font-size: 2.2em;
+    padding: 0 15px;
+  }
+  .testimonials-grid {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+    padding: 0 20px;
+  }
+  .testimonial-card.full-span {
+    grid-row: auto; /* Reset grid-row span */
+  }
+  .testimonial-card {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .commitment-section {
+    padding: 40px 0;
+  }
+  .pre-headline,
+  .pre-headline-secondary {
+    font-size: 1em;
+  }
+  .section-headline {
+    font-size: 1.8em;
+    margin-bottom: 40px;
+  }
+  .testimonial-card {
+    padding: 20px;
+  }
+  .reviewer-avatar {
+    width: 45px;
+    height: 45px;
+  }
+  .reviewer-name {
+    font-size: 1em;
+  }
+  .reviewer-details {
+    font-size: 0.85em;
+  }
+  .star-rating {
+    font-size: 1em;
+  }
+  .testimonial-title {
+    font-size: 1.2em;
+  }
+  .testimonial-text {
+    font-size: 0.95em;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-headline {
+    font-size: 1.5em;
+    padding-right: 0;
+    padding-left: 0;
+    margin-bottom: 30px;
+    border-top: 1px solid #a7a2a2;
+    padding-top: 30px;
+  }
+
+  .testimonial-card {
+    padding: 15px;
+  }
+  .reviewer-avatar {
+    width: 40px;
+    height: 40px;
+  }
+  .testimonial-title {
+    font-size: 1.1em;
+  }
+  .testimonial-text {
+    font-size: 0.9em;
+  }
+}
+
+/* --- Learn & Implement Section --- */
+.learn-implement-section {
+  background-color: #36a7e9; /* Vibrant blue from screenshot */
+  padding: 20px 0;
+  padding-bottom: 80px; /* Extra bottom padding */
+  text-align: center;
+}
+
+.section-heading-learn {
+  font-size: 2.4em; /* ~44.8px - Adjusted for visual balance */
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 60px;
+  line-height: 1.3;
+  position: relative; /* For the underline */
+  display: inline-block; /* To make underline span only the text */
+  padding: 0 20px;
+  max-width: 50%;
+}
+
+.section-heading-learn .underlined-text {
+  position: relative;
+  padding-bottom: 2px; /* Space for the underline */
+}
+
+.section-heading-learn .underlined-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px; /* Thickness of the underline */
+  background-color: #ffda33; /* Yellow color from screenshot */
+  border-radius: 3px; /* Slightly rounded ends */
+}
+
+/* Learn Cards Grid */
+.learn-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(320px, 1fr)
+  ); /* 3 columns on large, adapts */
+  gap: 20px; /* Space between cards */
+  margin: 0 auto; /* Center the grid */
+}
+
+.learn-card {
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+  border-radius: 15px;
+  padding: 30px;
+  text-align: left;
+  color: #fff;
+  font-size: 1.05em; /* ~16.8px - Slightly larger body text for readability */
+  line-height: 1.7;
+  font-weight: 400; /* Regular weight */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  display: flex; /* To vertically align content if cards have different heights */
+  flex-direction: column;
+  justify-content: start;
+}
+.learn-card img{
+  width: 50px;
+  height: 50px;
+ 
+ filter: brightness(0) invert(1); /* t
+}
+
+.learn-card p {
+  margin: 0;
+}
+
+.card-emphasis {
+  font-weight: 600; /* Bold for "Implement + ..." part */
+  /* text-transform: uppercase; */ /* If you want it all caps, uncomment this */
+}
+
+/* --- Responsive Adjustments for Learn & Implement Section --- */
+@media (max-width: 992px) {
+  .section-heading-learn {
+    font-size: 2.2em; /* ~35.2px */
+  }
+  .learn-cards-grid {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(280px, 1fr)
+    ); /* Adjust min width for smaller screens */
+    gap: 25px;
+  }
+  .learn-card {
+    padding: 25px;
+    font-size: 1em; /* ~16px */
+  }
+}
+
+@media (max-width: 768px) {
+  .learn-implement-section {
+    padding: 60px 0;
+  }
+  .section-heading-learn {
+    font-size: 1.8em; /* ~28.8px */
+    margin-bottom: 40px;
+  }
+  .section-heading-learn .underlined-text::after {
+    height: 4px; /* Thinner underline */
+  }
+  .learn-cards-grid {
+    grid-template-columns: 1fr; /* Single column on very small screens */
+    gap: 20px;
+    max-width: 100%; /* Constrain width */
+  }
+  .learn-card {
+    padding: 20px;
+    font-size: 0.95em; /* ~15.2px */
+  }
+}
+
+@media (max-width: 480px) {
+  .section-heading-learn {
+    font-size: 1.5em; /* ~24px */
+    max-width: 100%;
+    padding: 0 0;
+    margin-top: 0;
+  }
+  .learn-card {
+    font-size: 1.01em; /* ~14.4px */
+    padding: 30px;
+  }
+}
+
+/* --- Qualification Section --- */
+.qualification-section {
+  background-image: url("https://deleteanxietyworkshop.com/wp-content/uploads/2025/09/Rectangle-8.png"); /* Placeholder, find a subtle pattern or create your own */
+  --background-overlay: "";
+  background-position: center center;
+  background-repeat: repeat;
+  background-size: 150px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.section-headline-qual {
+  font-size: 2.4em; /* ~44.8px - Consistent with other section headlines */
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.sub-text-qual {
+  font-size: 1.2em; /* ~17.6px */
+  color: #666;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.sub-text-qual .highlight-green {
+  color: #28a745; /* Green color for YES! */
+  font-weight: 700;
+}
+
+/* Checkbox Grid */
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(400px, 1fr)
+  ); /* 2 columns on large, adapts */
+  gap: 25px; /* Space between boxes */
+  margin: 0 auto; /* Center the grid */
+  margin-bottom: 40px;
+}
+
+.checkbox-item {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px 20px;
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.checkbox-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.checkbox-item p {
+  margin: 0;
+  font-size: 1.05em; /* ~16.8px - For the checkbox text */
+  color: #333;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* CTA Phrase */
+.cta-phrase-qual {
+  font-size: 1.6em; /* ~25.6px - For "If you checked..." */
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 30px;
+  line-height: 1.4;
+  padding: 0 20px;
+}
+
+.cta-phrase-qual .highlight-blue {
+  color: #007bff; /* Bright blue for highlights */
+}
+
+.cta-phrase-qual .text-large {
+  font-size: 1.4em; /* ~35.8px (1.4 * 25.6) - for "DELETE ANXIETY WORKSHOP" */
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Main CTA Button - Re-appearing */
+.main-cta-button.qualification-cta {
+  margin-top: 0; /* Override default button margin-top */
+  margin-bottom: 0; /* No extra space below */
+}
+
+/* --- Responsive Adjustments for Qualification Section --- */
+@media (max-width: 992px) {
+  .section-headline-qual {
+    font-size: 2.2em; /* ~35.2px */
+  }
+  .sub-text-qual {
+    font-size: 1em; /* ~16px */
+  }
+  .checkbox-grid {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+    max-width: 100%;
+    gap: 20px;
+  }
+  .checkbox-item {
+    padding: 20px 25px;
+  }
+  .checkbox-item p {
+    font-size: 1em; /* ~16px */
+  }
+  .cta-phrase-qual {
+    font-size: 1.4em; /* ~22.4px */
+  }
+  .cta-phrase-qual .text-large {
+    font-size: 1.3em;
+  }
+}
+
+@media (max-width: 768px) {
+  .qualification-section {
+    padding: 60px 0;
+  }
+  .section-headline-qual {
+    font-size: 1.8em; /* ~28.8px */
+    margin-bottom: 15px;
+  }
+  .sub-text-qual {
+    font-size: 0.95em; /* ~15.2px */
+    margin-bottom: 40px;
+  }
+  .checkbox-item {
+    padding: 18px 20px;
+  }
+  .checkbox-item p {
+    font-size: 0.95em; /* ~15.2px */
+  }
+  .cta-phrase-qual {
+    font-size: 1.2em; /* ~19.2px */
+    margin-bottom: 25px;
+  }
+  .cta-phrase-qual .text-large {
+    font-size: 1.25em; /* ~24px */
+  }
+}
+
+@media (max-width: 480px) {
+  .section-headline-qual {
+    font-size: 1.5em;
+    margin-top: 0; /* ~24px */
+  }
+  .sub-text-qual {
+    font-size: 1.2em; /* ~14.4px */
+    margin-bottom: 30px;
+  }
+  .checkbox-item {
+    padding: 15px;
+  }
+  .checkbox-item p {
+    font-size: 0.9em; /* ~14.4px */
+  }
+  .cta-phrase-qual {
+    font-size: 1.1em;
+    padding: 0; /* ~16px */
+  }
+  .cta-phrase-qual .text-large {
+    font-size: 1.2em;
+    /* ~19.2px */
+  }
+  /* Main CTA button at bottom of this section will scale from global styles */
+}
+
+/* --- Value Proposition Section --- */
+.value-proposition-section {
+  background-image: url("https://deleteanxietyworkshop.com/wp-content/uploads/2025/09/Rectangle-8.png"); /* Placeholder, find a subtle pattern or create your own */
+  --background-overlay: "";
+  background-position: center center;
+  background-repeat: repeat;
+  background-size: 150px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+/* Top CTA and Pre-headlines (re-using existing styles, adjusting margins) */
+.value-proposition-section .top-cta-area {
+  padding-top: 50px; /* Space above the button */
+  padding-bottom: 50px; /* Space below the pre-headlines */
+}
+
+.main-cta-button.standalone-cta {
+  margin-bottom: 20px; /* Space between button and pre-headlines */
+  margin-top: 0; /* Override any previous margin-top */
+}
+
+.value-proposition-section .top-pre-headlines .pre-headline,
+.value-proposition-section .top-pre-headlines .pre-headline-secondary {
+  margin-bottom: 5px; /* Adjust spacing as needed */
+}
+.value-proposition-section .top-pre-headlines {
+  margin-bottom: 0; /* Remove extra margin */
+}
+
+/* Blue Banner with Message Card */
+.blue-banner {
+  background-color: #36a7e9; /* Consistent blue background */
+  padding: 40px 0; /* Vertical padding for the blue strip */
+}
+
+.blue-message-card {
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white card */
+  border-radius: 15px;
+  padding: 40px;
+  max-width: 950px; /* Max width for the content inside */
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.blue-card-headline {
+  font-size: 2.2em; /* ~35.2px */
+  font-weight: 700;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.blue-card-text {
+  font-size: 1.1em; /* ~17.6px */
+  color: #fff;
+  margin: 0;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* Bottom Headlines Area */
+.value-proposition-section .bottom-headlines-area {
+  padding-top: 60px; /* Space above "LIVE" badge */
+}
+
+.live-badge {
+  display: inline-flex; /* To align icon and text */
+  align-items: center;
+  background-color: #ff0000; /* Red color */
+  color: #fff;
+  padding: 8px 30px;
+  border-radius: 50px;
+  font-size: 1.1em; /* ~16px */
+  font-weight: 700;
+  text-transform: uppercase;
+
+  gap: 8px; /* Space between icon and text */
+}
+
+.live-badge i {
+  font-size: 0.9em; /* Slightly smaller icon */
+}
+
+.section-headline-final-cta {
+  font-size: 2.5em; /* ~40px */
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 10px;
+  line-height: 1.3;
+  padding: 0 20px;
+}
+
+.section-headline-final-cta .highlight-blue {
+  color: #007bff;
+}
+
+.section-headline-final-cta .text-large {
+  text-transform: uppercase; /* Match screenshot style */
+}
+
+.section-sub-headline-final-cta {
+  font-size: 1.8em; /* ~28.8px */
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 0; /* No bottom margin */
+  line-height: 1.3;
+  margin-top: 0px; /* Space above */
+}
+
+/* --- Responsive Adjustments for Value Proposition Section --- */
+@media (max-width: 992px) {
+  .blue-message-card {
+    padding: 30px;
+  }
+  .blue-card-headline {
+    font-size: 1.8em; /* ~28.8px */
+  }
+  .blue-card-text {
+    font-size: 1em; /* ~16px */
+  }
+  .section-headline-final-cta {
+    font-size: 2em; /* ~32px */
+  }
+  .section-sub-headline-final-cta {
+    font-size: 1.5em; /* ~24px */
+  }
+}
+
+@media (max-width: 768px) {
+  .value-proposition-section .top-cta-area {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .blue-banner {
+    padding: 40px 0;
+  }
+  .blue-message-card {
+    padding: 25px;
+    max-width: 90%;
+  }
+  .blue-card-headline {
+    font-size: 1.5em; /* ~24px */
+    margin-bottom: 15px;
+  }
+  .blue-card-text {
+    font-size: 0.95em; /* ~15.2px */
+  }
+  .value-proposition-section .bottom-headlines-area {
+    padding-top: 40px;
+  }
+  .live-badge {
+    padding: 6px 30px;
+    font-size: 0.9em; /* ~14.4px */
+    margin-bottom: 20px;
+  }
+  .section-headline-final-cta {
+    font-size: 1.6em; /* ~25.6px */
+  }
+  .section-sub-headline-final-cta {
+    font-size: 1.2em; /* ~19.2px */
+  }
+}
+
+@media (max-width: 480px) {
+  .blue-message-card {
+    padding: 20px;
+  }
+  .blue-card-headline {
+    font-size: 1.2em; /* ~19.2px */
+  }
+  .blue-card-text {
+    font-size: 0.9em; /* ~14.4px */
+  }
+  .section-headline-final-cta {
+    font-size: 2em;
+    margin-top: 0; /* ~20.8px */
+  }
+  .section-sub-headline-final-cta {
+    font-size: 1.6em;
+    font-weight: 700; /* ~16px */
+  }
+}
+
+/* --- What Will Be Covered Section --- */
+.what-covered-section {
+  background-image: url("https://deleteanxietyworkshop.com/wp-content/uploads/2025/09/Rectangle-8.png"); /* Placeholder, find a subtle pattern or create your own */
+  --background-overlay: "";
+  background-position: center center;
+  background-repeat: repeat;
+  background-size: 150px;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+/* Covered Items Grid */
+.covered-items-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* 4 columns on large, adapts */
+  gap: 25px; /* Space between cards */
+  margin: 0 auto; /* Center the grid */
+  margin-bottom: 60px; /* Space before the CTA */
+}
+
+.covered-item-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 30px 20px; /* Adjust padding for content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.09);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%; /* Ensure cards are same height in a row */
+  box-sizing: border-box; /* Include padding in height calculation */
+}
+
+.covered-item-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.covered-item-icon {
+  width: 64px; /* Icon size */
+  height: 64px;
+  object-fit: contain; /* Ensure icon scales properly */
+  margin-bottom: 15px;
+  /* If these were SVGs, you could use CSS to change color: filter: brightness(0) saturate(100%) invert(24%) sepia(90%) saturate(1472%) hue-rotate(193deg) brightness(101%) contrast(106%); for a blue effect */
+}
+
+.covered-item-text {
+  font-size: 1.1em; /* ~17.6px */
+  font-weight: 600;
+  color: #8b8b8b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Recurring CTA Block - re-using existing button/pre-headline styles */
+.main-cta-button.covered-cta {
+  margin-bottom: 20px; /* Space before pre-headlines */
+  margin-top: 0; /* Override any previous margin-top */
+}
+
+.covered-pre-headlines .pre-headline,
+.covered-pre-headlines .pre-headline-secondary {
+  margin-bottom: 5px; /* Adjust spacing as needed */
+}
+.covered-pre-headlines {
+  margin-bottom: 0; /* Remove extra margin */
+}
+
+/* --- Responsive Adjustments for What Covered Section --- */
+@media (max-width: 992px) {
+  .covered-items-grid {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(200px, 1fr)
+    ); /* 3 columns on medium screens */
+    gap: 20px;
+    padding: 0 15px;
+  }
+  .covered-item-card {
+    padding: 25px 15px;
+  }
+  .covered-item-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  .covered-item-text {
+    font-size: 1em; /* ~16px */
+  }
+}
+
+@media (max-width: 768px) {
+  .what-covered-section {
+    padding: 20px 0;
+  }
+  .covered-items-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    gap: 15px;
+    max-width: 90%;
+  }
+  .covered-item-card {
+    padding: 20px 10px;
+  }
+  .covered-item-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .covered-item-text {
+    font-size: 0.95em; /* ~15.2px */
+  }
+  .covered-cta {
+    font-size: 1.1em;
+    /* ~19.2px */
+  }
+}
+
+@media (max-width: 480px) {
+  .covered-items-grid {
+    grid-template-columns: 1fr; /* Single column on very small screens */
+    max-width: 100%;
+    gap: 15px;
+  }
+  .covered-item-card {
+    padding: 20px;
+  }
+  .covered-item-icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 30px;
+  }
+  .covered-item-text {
+    font-size: 1.2em; /* ~14.4px */
+  }
+  .covered-cta {
+    font-size: 1.1em;
+    padding: 20px 20px;
+    /* ~17.6px */
+  }
+}
+
+/* --- Benefits Section --- */
+.benefits-section {
+  background-color: #fff; /* Consistent vibrant blue background */
+  padding: 40px 0;
+  text-align: center;
+}
+.benefits-content-area {
+  background-color: #36a7e9; /* Consistent vibrant blue background */
+  padding-bottom: 50px;
+  padding-top: 40px;
+  border-radius: 25px;
+}
+
+.benefits-headline {
+  font-size: 2.5em; /* ~40px - Matches screenshot */
+  font-weight: 700;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  padding: 0 20px;
+}
+
+.benefits-headline .highlight-5x {
+  color: #fff; /* Still white, but adding a class for potential future styling like bolding */
+  font-weight: 800; /* Even bolder for "5x" */
+}
+
+.benefits-subheadline {
+  font-size: 1.2em; /* ~19.2px */
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  padding: 0 20px;
+}
+
+/* Benefit Cards Grid */
+.benefit-cards-grid {
+  max-width: 900px; /* Constrain container width */
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(380px, 1fr)
+  ); /* 2 columns on large, adapts */
+  gap: 25px; /* Space between cards */
+  margin: 0 auto; /* Center the grid */
+}
+
+.benefit-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 25px 30px;
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: auto; /* Allow height to adjust based on content */
+  display: flex; /* To vertically align content if cards have different heights */
+  align-items: center;
+  box-sizing: border-box; /* Include padding in height calculation */
+}
+
+.benefit-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.benefit-card p {
+  margin: 0;
+  font-size: 1.05em; /* ~16.8px */
+  color: #333;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* --- Responsive Adjustments for Benefits Section --- */
+@media (max-width: 992px) {
+  .benefits-headline {
+    font-size: 2em; /* ~32px */
+  }
+  .benefits-subheadline {
+    font-size: 1.1em; /* ~17.6px */
+    margin-bottom: 40px;
+  }
+  .benefit-cards-grid {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+    max-width: 90%;
+    gap: 20px;
+  }
+  .benefit-card {
+    padding: 20px 25px;
+  }
+  .benefit-card p {
+    font-size: 1em; /* ~16px */
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits-section {
+    padding: 20px 0;
+  }
+  .benefits-headline {
+    font-size: 1.6em; /* ~25.6px */
+    margin-bottom: 15px;
+  }
+  .benefits-subheadline {
+    font-size: 1em; /* ~16px */
+    margin-bottom: 30px;
+  }
+  .benefit-card {
+    padding: 18px 20px;
+  }
+  .benefit-card p {
+    font-size: 0.95em; /* ~15.2px */
+  }
+}
+
+@media (max-width: 480px) {
+  .benefits-headline {
+    font-size: 1.3em; /* ~20.8px */
+  }
+  .benefits-subheadline {
+    font-size: 0.9em;
+    padding: 0 40px; /* ~14.4px */
+  }
+  .benefit-card {
+    padding: 15px;
+  }
+  .benefit-card p {
+    font-size: 0.9em; /* ~14.4px */
+  }
+}
+
+/* --- Success Stories Section --- */
+.success-stories-section {
+  background-color: #36a7e9; /* Consistent vibrant blue background */
+  padding-top: 60px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.section-heading-success {
+  font-size: 2.6em; /* ~44.8px - Consistent with other section headlines */
+  font-weight: 700;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 60px;
+  line-height: 1.1;
+  position: relative; /* For the underline */
+  display: inline-block; /* To make underline span only the text */
+  padding: 0 20px;
+  max-width: 60%;
+}
+
+.section-heading-success .underlined-text {
+  position: relative;
+  padding-bottom: 2px; /* Space for the underline */
+}
+
+.section-heading-success .underlined-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px; /* Thickness of the underline */
+  background-color: #ffda33; /* Yellow color from screenshot */
+  border-radius: 3px; /* Slightly rounded ends */
+}
+
+/* Profile Cards Grid */
+.profile-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(290px, 1fr)
+  ); /* 3 columns on large, adapts */
+  gap: 20px; /* Space between cards */
+  margin: 0 auto;
+}
+
+.profile-card {
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white card */
+  border-radius: 10px;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to top */
+  align-items: center;
+  text-align: center;
+  height: 100%; /* Ensure cards are same height in a row */
+  box-sizing: border-box; /* Include padding in height calculation */
+}
+
+.profile-avatar {
+  width: 200px; /* Size of the circular image */
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover; /* Ensures image covers the circle without distortion */
+  margin-bottom: 10px;
+}
+
+.profile-name {
+  font-size: 1.3em; /* ~20.8px */
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 5px 0;
+  line-height: 1.2;
+  font-family: "Sora", sans-serif;
+}
+
+.profile-role {
+  font-size: 1em; /* ~16px */
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8); /* Lighter white for role */
+  margin: 0;
+  font-family: "Sora", sans-serif;
+}
+
+/* --- Responsive Adjustments for Success Stories Section --- */
+@media (max-width: 992px) {
+  .section-heading-success {
+    font-size: 2.2em;
+    width: 100% !important;
+  }
+  .profile-cards-grid {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(250px, 1fr)
+    ); /* 2 columns on medium screens */
+    gap: 25px;
+    max-width: 90%;
+  }
+  .profile-card {
+    padding: 25px 15px;
+  }
+  .profile-avatar {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+  }
+  .profile-name {
+    font-size: 1.2em; /* ~19.2px */
+  }
+  .profile-role {
+    font-size: 0.95em; /* ~15.2px */
+  }
+}
+
+@media (max-width: 768px) {
+  .success-stories-section {
+    padding: 60px 0;
+    padding-bottom: 0;
+  }
+  .section-heading-success {
+    font-size: 1.8em; /* ~28.8px */
+    margin-bottom: 40px;
+    width: 100% !important;
+  }
+  .section-heading-success .underlined-text::after {
+    height: 4px; /* Thinner underline */
+  }
+  .profile-cards-grid {
+    grid-template-columns: 1fr; /* Single column on tablets/small mobiles */
+    gap: 20px;
+    max-width: 100%;
+  }
+  .profile-avatar {
+    width: 200px;
+    height: 200px;
+  }
+  .profile-name {
+    font-size: 1.1em; /* ~17.6px */
+  }
+  .profile-role {
+    font-size: 0.9em; /* ~14.4px */
+  }
+}
+
+@media (max-width: 480px) {
+  .section-heading-success {
+    font-size: 1.39em;
+    max-width: 100% !important;
+    padding-left: 0;
+    padding-right: 0; /* ~24px */
+  }
+  .profile-avatar {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+  }
+  .profile-name {
+    font-size: 1.3em; /* ~16px */
+  }
+  .profile-role {
+    font-size: 1em; /* ~13.6px */
+  }
+}
+
+/* --- Countdown Section --- */
+.countdown-section {
+  background-color: #36a7e9; /* Consistent vibrant blue background */
+  padding-top: 20px;
+  padding-bottom: 200px;
+  text-align: center;
+}
+
+.countdown-headline {
+  font-size: 2.5em; /* ~40px - Consistent with other large headlines */
+  font-weight: 700;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 30px;
+  line-height: 1.3;
+  padding: 0 20px;
+}
+
+/* Countdown Timer Styling */
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  gap: 25px; /* Space between timer boxes */
+  margin-bottom: 30px;
+}
+
+.timer-box {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100px; /* Ensure boxes have minimum width */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.timer-value {
+  font-family: "Sora", sans-serif;
+  font-size: 2.8em; /* ~44.8px - Large numbers */
+  font-weight: 700;
+  color: #333;
+  line-height: 1; /* Tight line height */
+  margin-bottom: 5px;
+}
+
+.timer-label {
+  font-family: "Sora", sans-serif;
+  font-size: 0.9em; /* ~14.4px */
+  font-weight: 500;
+  color: #666;
+  text-transform: uppercase;
+}
+
+/* Price Warning & Bonus Info */
+.price-warning {
+  font-size: 1.2em; /* ~19.2px */
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0px;
+}
+
+.price-warning .highlight-red {
+  color: #ff0000;
+  font-size: 1em; /* Red for emphasis */
+}
+
+.bonus-info {
+  font-size: 1.2em; /* ~17.6px */
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 40px;
+  margin-top: 0;
+}
+
+/* Main CTA Button - Re-appearing */
+.main-cta-button.countdown-cta {
+  margin-top: 0; /* Override default button margin-top */
+  margin-bottom: 20px; /* Space before the pre-headlines */
+}
+
+/* Bottom pre-headlines (repeating pattern) */
+.bottom-pre-headlines-countdown .pre-headline,
+.bottom-pre-headlines-countdown .pre-headline-secondary {
+  color: rgba(255, 255, 255, 0.8); /* Lighter white for this block */
+  margin-bottom: 5px; /* Adjust spacing as needed */
+}
+.bottom-pre-headlines-countdown .highlight-blue {
+  color: #d1efff; /* Lighter blue for highlights in this section */
+}
+.bottom-pre-headlines-countdown {
+  margin-bottom: 0; /* Remove extra margin */
+}
+
+/* --- Responsive Adjustments for Countdown Section --- */
+@media (max-width: 992px) {
+  .countdown-headline {
+    font-size: 2em; /* ~32px */
+    margin-bottom: 40px;
+  }
+  .countdown-timer {
+    gap: 20px;
+  }
+  .timer-box {
+    padding: 18px 20px;
+    min-width: 90px;
+  }
+  .timer-value {
+    font-size: 2.4em; /* ~38.4px */
+  }
+  .timer-label {
+    font-size: 0.85em; /* ~13.6px */
+  }
+  .price-warning {
+    font-size: 1.1em; /* ~17.6px */
+  }
+  .bonus-info {
+    font-size: 1em; /* ~16px */
+    margin-bottom: 30px;
+  }
+  .main-cta-button.countdown-cta {
+    font-size: 1.3em; /* ~20.8px */
+  }
+}
+
+@media (max-width: 768px) {
+  .countdown-section {
+    padding: 60px 0;
+    margin-bottom: 80px;
+  }
+  .countdown-headline {
+    font-size: 1.6em; /* ~25.6px */
+    margin-bottom: 30px;
+  }
+  .countdown-timer {
+    gap: 15px;
+    flex-wrap: wrap; /* Allow timer boxes to wrap on very small screens */
+  }
+  .timer-box {
+    padding: 15px 15px;
+    min-width: 70px;
+  }
+  .timer-value {
+    font-size: 2em; /* ~32px */
+  }
+  .timer-label {
+    font-size: 0.8em; /* ~12.8px */
+  }
+  .price-warning {
+    font-size: 1em; /* ~16px */
+  }
+  .bonus-info {
+    font-size: 0.95em; /* ~15.2px */
+    margin-bottom: 25px;
+  }
+  .main-cta-button.countdown-cta {
+    font-size: 1.2em; /* ~19.2px */
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown-headline {
+    font-size: 1.6em; /* ~20.8px */
+  }
+  .countdown-timer {
+    flex-direction: row; /* Keep row layout */
+    max-width: 90%; /* Constrain width */
+    margin: 0 auto 30px auto;
+    gap: 10px;
+  }
+  .timer-box {
+    flex: 1; /* Allow boxes to grow equally */
+    padding: 10px;
+    min-width: unset; /* Remove min-width */
+  }
+  .timer-value {
+    font-size: 1.5em; /* ~24px */
+  }
+  .timer-label {
+    font-size: 0.75em; /* ~12px */
+  }
+  .price-warning {
+    font-size: 1.2em;
+    line-height: 1.2; /* ~14.4px */
+  }
+  .highlight-red {
+    font-size: 1em !important;
+    line-height: 1.2;
+  }
+  .bonus-info {
+    font-size: 0.85em; /* ~13.6px */
+  }
+  .main-cta-button.countdown-cta {
+    font-size: 1.1em; /* ~17.6px */
+    padding: 20px 20px;
+  }
+}
+
+/* --- Instructor Bio Section --- */
+.instructor-bio-section {
+  background-image: url("https://deleteanxietyworkshop.com/wp-content/uploads/2025/09/Rectangle-8.png"); /* Placeholder, find a subtle pattern or create your own */
+  --background-overlay: "";
+  background-position: center center;
+  background-repeat: repeat;
+  background-size: 150px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.instructor-card {
+  background-color: #fff;
+  border-radius: 15px;
+
+  display: flex; /* Use flexbox for image and details side-by-side */
+  gap: 30px; /* Space between image and text */
+  align-items: flex-start; /* Align content to the top */
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+  margin-top: -100px;
+  padding: 30px;
+  padding-bottom: 0; /* Space below the card */
+}
+
+.instructor-image-wrapper {
+  position: relative;
+  flex-shrink: 0; /* Prevent image wrapper from shrinking */
+  width: 50%; /* Base width for image area */
+  height: 400px; /* Base height for image area */
+  border-radius: 10px; /* Match outer card radius */
+  overflow: hidden;
+  margin-top: -130px; /* Slightly overlap the top of the card */
+
+  /* Hide overflow of inner images */
+}
+
+.instructor-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.workshop-templates-overlay {
+  position: absolute;
+  bottom: 10px; /* Position relative to main image */
+  left: 10px;
+  width: 60%; /* Smaller relative to wrapper */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 2; /* Templates image over main image */
+}
+
+.bonus-sticker .sticker-icon {
+  width: 20px; /* Small icon inside sticker */
+  height: 20px;
+  display: none; /* Hide placeholder image if using real icons/SVG */
+}
+.bonus-sticker .sticker-text {
+  font-size: 0.75em; /* Smaller text inside sticker */
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.instructor-details {
+  flex-grow: 1;
+  text-align: start !important; /* Allow details to take remaining space */
+}
+
+.instructor-name {
+  font-size: 2.2em; /* ~35.2px */
+  font-weight: 700;
+  color: #000;
+  margin-top: 0;
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+.instructor-achievements {
+  list-style: none; /* Remove default bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+.instructor-achievements li {
+  font-size: 1.1em; /* ~17.6px */
+  color: #333;
+  margin-bottom: 15px;
+  display: flex; /* For icon alignment */
+  align-items: flex-start;
+  gap: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.instructor-achievements li i {
+  color: #007bff; /* Blue icons */
+  font-size: 1.3em; /* Slightly larger icon */
+  flex-shrink: 0; /* Prevent icon from shrinking */
+  margin-top: 2px; /* Align icon better with text */
+}
+.instructor-achievements li:last-child {
+  margin-bottom: 0;
+}
+
+.instructor-long-bio {
+  font-size: 1.12rem; /* ~16.8px */
+  color: #555;
+  line-height: 1.4;
+  margin-bottom: 30px;
+  text-align: center; /* Keep bio text left-aligned */
+}
+
+.final-call-to-action-headline {
+  font-size: 2.2em; /* ~35.2px */
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 30px;
+  line-height: 1.3;
+  padding: 0 20px;
+}
+
+/* Main CTA Button - Re-appearing */
+.main-cta-button.instructor-cta {
+  margin-top: 0; /* Override default button margin-top */
+  margin-bottom: 20px; /* Space before the pre-headlines */
+}
+
+/* Bottom pre-headlines (repeating pattern) */
+.bottom-pre-headlines-instructor .pre-headline,
+.bottom-pre-headlines-instructor .pre-headline-secondary {
+  margin-bottom: 5px; /* Adjust spacing as needed */
+}
+.bottom-pre-headlines-instructor {
+  margin-bottom: 0; /* Remove extra margin */
+}
+
+/* --- Responsive Adjustments for Instructor Bio Section --- */
+@media (max-width: 992px) {
+  .instructor-card {
+    flex-direction: column; /* Stack image and details vertically */
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .instructor-image-wrapper {
+    width: 200px;
+    height: 250px;
+    margin-bottom: 20px;
+  }
+  .workshop-templates-overlay {
+    width: 50%; /* Smaller on smaller instructor image */
+  }
+  .bonus-sticker {
+    width: 50px;
+    height: 50px;
+    font-size: 0.7em;
+    padding: 3px;
+  }
+  .instructor-name {
+    font-size: 1.8em; /* ~28.8px */
+    margin-bottom: 15px;
+  }
+  .instructor-achievements li {
+    font-size: 1em; /* ~16px */
+    justify-content: center; /* Center icons and text */
+    gap: 10px;
+  }
+  .instructor-achievements li i {
+    font-size: 1.1em; /* ~17.6px */
+    margin-top: 0;
+  }
+  .instructor-long-bio {
+    font-size: 1em; /* ~16px */
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  .final-call-to-action-headline {
+    font-size: 1.8em; /* ~28.8px */
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .instructor-bio-section {
+    padding: 60px 0;
+  }
+  .instructor-card {
+    padding: 20px;
+    gap: 20px;
+  }
+  .instructor-image-wrapper {
+    width: 580px;
+    height: 420px;
+    margin-top: -50px;
+  }
+  .workshop-templates-overlay {
+    bottom: 5px;
+    left: 5px;
+    width: 55%;
+  }
+  .bonus-sticker {
+    width: 45px;
+    height: 45px;
+    font-size: 0.65em;
+  }
+  .instructor-name {
+    font-size: 1.5em; /* ~24px */
+  }
+  .instructor-achievements li {
+    font-size: 0.95em; /* ~15.2px */
+  }
+  .instructor-long-bio {
+    font-size: 0.95em; /* ~15.2px */
+    margin-bottom: 40px;
+  }
+  .final-call-to-action-headline {
+    font-size: 1.5em; /* ~24px */
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .instructor-card {
+    padding: 15px;
+    margin-top: -140px;
+    gap: 0;
+  }
+  .instructor-image-wrapper {
+    width: 320px;
+    height: 220px;
+    margin-top: -80px;
+  }
+  .workshop-templates-overlay {
+    width: 60%; /* Adjust as needed */
+  }
+  .bonus-sticker {
+    width: 40px;
+    height: 40px;
+    font-size: 0.6em;
+  }
+  .instructor-name {
+    font-size: 2.2em; /* ~20.8px */
+  }
+  .instructor-achievements li {
+    font-size: 0.9em; /* ~14.4px */
+    gap: 10px;
+    justify-content: start;
+  }
+  .instructor-achievements li i {
+    font-size: 1em; /* ~16px */
+  }
+  .instructor-long-bio {
+    font-size: 0.9em; /* ~14.4px */
+  }
+  .final-call-to-action-headline {
+    font-size: 1.8em;
+    padding: 0 0px; /* ~20.8px */
+    font-weight: 800; /* ~19.2px */
+  }
+}
+.review-section {
+  /* Adjust size as needed */
+  background-color: #fff;
+  padding: 20px 0;
+}
+
+.review-section h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #111;
+  margin-top: 0;
+}
+
+.reviews-image {
+  background-image: url("/reviews.png");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+
+  height: 600px;
+  margin: 0 auto 2rem auto;
+}
+.reviews-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .reviews-image {
+    height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews-image {
+    height: 350px;
+  }
+
+  .review-section h1 {
+    font-size: 1.75rem;
+  }
+
+  .review-section p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .reviews-image {
+    height: 250px;
+  }
+
+  .review-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .review-section p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+/* --- Bonuses Section --- */
+.bonuses-section {
+  background-image: url("https://deleteanxietyworkshop.com/wp-content/uploads/2025/09/Rectangle-8.png"); /* Placeholder, find a subtle pattern or create your own */
+  --background-overlay: "";
+  background-position: center center;
+  background-repeat: repeat;
+  background-size: 150px;
+  text-align: center;
+}
+
+/* Top CTA and Pre-headlines (re-using existing styles) */
+.bonuses-section .top-cta-area {
+  padding-bottom: 50px; /* Space below the pre-headlines */
+}
+/* Ensure the pre-headline text is dark here, not white from blue sections */
+.bonuses-section .top-pre-headlines .pre-headline,
+.bonuses-section .top-pre-headlines .pre-headline-secondary {
+  color: #333; /* Dark text */
+}
+.bonuses-section .top-pre-headlines .highlight-blue {
+  color: #007bff; /* Bright blue highlight */
+}
+
+/* Bonuses Content Area */
+.bonuses-content-area {
+  padding-top: 20px; /* Add some space between the top CTA area and bonus cards */
+}
+
+.bonus-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  ); /* 3 columns on large, adapts */
+  gap: 30px; /* Space between cards */
+  /* Max width for the grid to keep it centered */
+  margin: 0 auto;
+  margin-bottom: 60px; /* Space before total value headline */
+}
+
+.bonus-card {
+  background-color: #fff;
+  border: 1px solid #007bff;
+  border-radius: 12px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  height: 100%; /* Ensure cards are same height in a row */
+  box-sizing: border-box; /* Include padding in height calculation */
+}
+
+.bonus-image {
+  width: 150px; /* Size of the book image */
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.bonus-title {
+  font-size: 1.35em; /* ~19.2px */
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 15px 0;
+  line-height: 1.4;
+}
+
+.bonus-title .highlight-blue {
+  color: #007bff; /* Bright blue for "Bonus #X" */
+}
+
+.bonus-value-button {
+  display: inline-block;
+  background-color: #007bff; /* Solid blue button */
+  color: #fff;
+  padding: 8px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.1em; /* ~17.6px */
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  font-family: "Sora", sans-serif;
+}
+
+.bonus-value-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.total-bonus-value-headline {
+  font-size: 2.2em; /* ~35.2px */
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 0; /* No bottom margin, as it's the end of the section */
+  line-height: 1.3;
+
+  margin-top: 0;
+}
+
+.total-bonus-value-headline .highlight-red {
+  color: #ff0000;
+  /* Red for the total value */
+}
+.highlight-red {
+  font-size: 2rem;
+}
+/* --- Responsive Adjustments for Bonuses Section --- */
+@media (max-width: 992px) {
+  .bonuses-section .top-cta-area {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .bonus-cards-grid {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(250px, 1fr)
+    ); /* 2 columns on medium screens */
+    gap: 25px;
+    max-width: 90%;
+    margin-bottom: 50px;
+  }
+  .bonus-card {
+    padding: 25px 15px;
+  }
+  .bonus-image {
+    width: 120px;
+    margin-bottom: 15px;
+  }
+  .bonus-title {
+    font-size: 1.1em; /* ~17.6px */
+  }
+  .bonus-value-button {
+    font-size: 1em; /* ~16px */
+    padding: 10px 20px;
+  }
+  .total-bonus-value-headline {
+    font-size: 1.8em; /* ~28.8px */
+  }
+}
+
+@media (max-width: 768px) {
+  .bonuses-section {
+    padding-bottom: 60px;
+    padding-bottom: 0;
+  }
+  .bonus-cards-grid {
+    grid-template-columns: 1fr; /* Single column on tablets/small mobiles */
+    gap: 20px;
+    max-width: 95%;
+    margin-bottom: 40px;
+  }
+  .bonus-image {
+    width: 150px;
+  }
+  .bonus-title {
+    font-size: 1.05em; /* ~16.8px */
+  }
+  .bonus-value-button {
+    font-size: 0.95em; /* ~15.2px */
+    padding: 8px 18px;
+  }
+  .total-bonus-value-headline {
+    font-size: 1.5em; /* ~24px */
+  }
+}
+
+@media (max-width: 480px) {
+  .bonus-card {
+    padding: 20px;
+  }
+  .bonus-image {
+    width: 150px;
+  }
+  .bonus-title {
+    font-size: 1.4em; /* ~16px */
+  }
+  .total-bonus-value-headline {
+    font-size: 2em; /* ~19.2px */
+  }
+  .total-bonus-value-headline .highlight-red {
+    padding-top: 20px;
+    /* Red for the total value */
+  }
+}
+/* --- Final CTA Section (White Background) --- */
+.final-cta-section {
+  background-image: url("https://deleteanxietyworkshop.com/wp-content/uploads/2025/09/Rectangle-8.png"); /* Placeholder, find a subtle pattern or create your own */
+  --background-overlay: "";
+  background-position: center center;
+  background-repeat: repeat;
+  background-size: 150px;
+  padding: 20px 0;
+  padding-top: 0;
+  text-align: center;
+}
+
+.final-cta-headline {
+  font-size: 3.5em; /* ~40px */
+  font-weight: 700;
+  color: #007bff; /* Blue text */
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.3;
+  padding-top: 20px;
+}
+
+.final-cta-subtext {
+  font-size: 1.4em; /* ~17.6px */
+  font-weight: 600;
+  color: #1b1a1a;
+  margin-bottom: 40px;
+  margin-top: 10px;
+}
+
+/* Countdown Timer Styling for this specific block */
+.countdown-timer.short-timer {
+  margin-bottom: 50px; /* Space below the timer */
+  /* Override background-color if it was previously set globally for timers */
+  /* .timer-box styles inherit from global, which is white background */
+}
+
+.impact-statement {
+  font-size: 1.6em; /* ~20.8px */
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+  line-height: 1.3;
+  padding: 0 20px;
+}
+
+/* Main CTA Button - Re-appearing */
+.main-cta-button.final-cta-button {
+  margin-top: 0; /* Override default button margin-top */
+  margin-bottom: 20px; /* Space before the pre-headlines */
+}
+
+/* Bottom pre-headlines (repeating pattern) */
+.bottom-pre-headlines-final-cta .pre-headline,
+.bottom-pre-headlines-final-cta .pre-headline-secondary {
+  color: #333; /* Dark text */
+  margin-bottom: 5px; /* Adjust spacing as needed */
+}
+.bottom-pre-headlines-final-cta .highlight-blue {
+  color: #007bff; /* Bright blue highlight */
+}
+.bottom-pre-headlines-final-cta {
+  margin-bottom: 0; /* Remove extra margin */
+}
+
+/* --- Responsive Adjustments for New Sections --- */
+@media (max-width: 992px) {
+  /* Final CTA Section */
+  .final-cta-headline {
+    font-size: 2em; /* ~32px */
+  }
+  .final-cta-subtext {
+    font-size: 1em; /* ~16px */
+  }
+  .impact-statement {
+    font-size: 1.2em; /* ~19.2px */
+  }
+  .main-cta-button.final-cta-button {
+    font-size: 1.3em; /* ~20.8px */
+  }
+
+  /* FAQ Intro Section */
+  .faq-main-headline {
+    font-size: 2.2em !important; /* ~35.2px */
+  }
+  .faq-intro-text {
+    font-size: 1em; /* ~16px */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Final CTA Section */
+  .final-cta-section {
+    padding: 0px 0 40px;
+  }
+  .final-cta-headline {
+    font-size: 1.6em !important; /* ~25.6px */
+    margin-bottom: 10px;
+  }
+  .final-cta-subtext {
+    font-size: 0.95em; /* ~15.2px */
+    margin-bottom: 30px;
+  }
+  .impact-statement {
+    font-size: 1.1em; /* ~17.6px */
+    margin-bottom: 30px;
+  }
+  .main-cta-button.final-cta-button {
+    font-size: 1.2em; /* ~19.2px */
+  }
+
+  /* FAQ Intro Section */
+  .faq-intro-section {
+    padding: 60px 0;
+    font-size: 1.4em; /* ~22.4px */
+  }
+  .faq-main-headline {
+    font-size: 1.8em; /* ~28.8px */
+    margin-bottom: 15px;
+  }
+  .faq-intro-text {
+    font-size: 0.95em; /* ~15.2px */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Final CTA Section */
+
+  .final-cta-subtext {
+    font-size: 0.9em; /* ~14.4px */
+  }
+  .impact-statement {
+    font-size: 1em;
+    padding-left: 0;
+    padding-right: 0;
+    font-weight: 700;
+    line-height: 1.3; /* ~16px */
+  }
+  .main-cta-button.final-cta-button {
+    font-size: 1.1em; /* ~17.6px */
+    padding: 20px 20px;
+  }
+
+  /* FAQ Intro Section */
+  .faq-main-headline {
+    font-size: 1.8em !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important; /* ~24px */
+  }
+  .faq-intro-text {
+    font-size: 0.95em !important; /* ~12.8px */
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-bottom: 20 !important; /* ~14.4px */
+  }
+}
+/* --- FAQ Content Section --- */
+.faq-content-section {
+  background-image: url("https://deleteanxietyworkshop.com/wp-content/uploads/2025/09/Rectangle-8.png"); /* Placeholder, find a subtle pattern or create your own */
+  --background-overlay: "";
+  background-position: center center;
+  background-repeat: repeat;
+  background-size: 150px;
+  padding: 40px 0; /* Adjust top padding as intro section has its own bottom padding */
+  text-align: center;
+}
+
+.faq-main-headline {
+  font-size: 2.8em; /* ~44.8px - Consistent with other large headlines */
+  font-weight: 700;
+  color: #000;
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: 1.3;
+  padding: 0 20px;
+}
+
+.faq-main-headline .highlight-blue {
+  color: #007bff; /* Blue for FAQs */
+}
+
+.faq-intro-text {
+  font-size: 1.2em; /* ~17.6px */
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 0; /* No bottom margin here, FAQ items will follow */
+  line-height: 1.6;
+  padding: 0 20px;
+  margin-bottom: 40px; /* Space before FAQ items */
+}
+
+.faq-accordion-wrapper {
+  margin-bottom: 60px; /* Space before the final CTA button */
+}
+
+.faq-item {
+  background-color: #fff;
+  border-radius: 12px;
+  margin-bottom: 20px; /* Space between FAQ items */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden; /* Important for accordion transition */
+}
+
+.faq-question {
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: #f5f5f5; /* Light hover effect */
+}
+
+.faq-question p {
+  margin: 0;
+  font-size: 1.15em; /* ~18.4px - Slightly larger for questions */
+  font-weight: 600; /* Bolder questions */
+  color: #333;
+  line-height: 1.5;
+  text-align: left;
+  flex-grow: 1; /* Allow text to take most space */
+  padding-right: 15px; /* Space between text and icon */
+}
+
+.faq-question .icon {
+  font-size: 1.2em; /* Size of the plus/minus icon */
+  color: #007bff; /* Blue icon */
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  max-height: 0; /* Hidden by default */
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Smooth transition */
+  padding: 0 30px; /* Initial padding, will expand with max-height */
+  background-color: #fdfdfd; /* Slightly different background for answer */
+  border-top: 1px solid #eee;
+}
+
+.faq-answer.active {
+  max-height: 500px; /* Adjust max-height as needed, should be large enough to contain content */
+  padding: 20px 30px; /* Expanded padding */
+}
+
+.faq-answer p {
+  margin: 0;
+  font-size: 1em; /* ~16px */
+  color: #555;
+  line-height: 1.7;
+  text-align: left;
+}
+
+/* Active state for question and icon */
+.faq-item.active .faq-question .icon {
+  transform: rotate(
+    45deg
+  ); /* Rotate plus to become an X (or you can change to minus icon) */
+  /* If using fas fa-minus: content: "\f068"; or swap class */
+}
+
+/* Final CTA Button for the page (re-using existing style) */
+.main-cta-button.faq-bottom-cta {
+  margin-top: 0; /* Override default button margin-top */
+  margin-bottom: 0; /* No bottom margin, as it's the end of the page */
+}
+
+/* --- Responsive Adjustments for FAQ Section --- */
+@media (max-width: 992px) {
+  .faq-question p {
+    font-size: 1.05em; /* ~16.8px */
+  }
+  .faq-answer p {
+    font-size: 0.95em; /* ~15.2px */
+  }
+}
+
+@media (max-width: 768px) {
+  .faq-content-section {
+    padding: 10px 0 60px;
+  }
+  .faq-item {
+    margin-bottom: 15px;
+  }
+  .faq-question {
+    padding: 18px 25px;
+  }
+  .faq-question p {
+    font-size: 1em; /* ~16px */
+  }
+  .faq-question .icon {
+    font-size: 1.1em; /* ~17.6px */
+  }
+  .faq-answer.active {
+    padding: 15px 25px;
+  }
+  .faq-answer p {
+    font-size: 0.9em; /* ~14.4px */
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-accordion-wrapper {
+    margin-bottom: 40px;
+  }
+  .faq-question {
+    padding: 15px 20px;
+  }
+  .faq-question p {
+    font-size: 0.95em; /* ~15.2px */
+  }
+  .faq-question .icon {
+    font-size: 1em; /* ~16px */
+  }
+  .faq-answer.active {
+    padding: 12px 20px;
+  }
+  .faq-answer p {
+    font-size: 0.85em; /* ~13.6px */
+  }
+}
+
+.main-cta-button.footer-cta {
+  margin-bottom: 20px; /* Space before pre-headlines */
+  margin-top: 0; /* Override any previous margin-top */
+}
+
+.footer-pre-headlines .pre-headline,
+.footer-pre-headlines .pre-headline-secondary {
+  color: #333; /* Dark text */
+  margin-bottom: 5px; /* Adjust spacing as needed */
+}
+.footer-pre-headlines .highlight-blue {
+  color: #007bff; /* Bright blue highlight */
+}
+.footer-pre-headlines {
+  margin-bottom: 0; /* Remove extra margin */
+}
+
+/* --- Disclaimer Section --- */
+.disclaimer-section {
+  background-color: #333333; /* Dark grey background */
+  padding: 20px 0;
+  text-align: center;
+}
+
+.disclaimer-text {
+  font-size: 0.85em; /* ~13.6px - Smaller for legal text */
+  font-weight: 400;
+  color: #cccccc; /* Light grey text */
+  line-height: 1.8; /* Enhanced readability for long text */
+  margin: 0;
+  padding: 0 20px; /* Horizontal padding for text wrapping */
+  font-family: "Sora", sans-serif;
+}
+
+/* --- Footer Copyright --- */
+.footer-copyright {
+  background-color: #36a7e9; /* Consistent vibrant blue */
+  padding: 10px 0;
+  text-align: center;
+}
+
+.copyright-text {
+  font-size: 0.9em; /* ~14.4px */
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+  font-family: "Sora", sans-serif;
+}
+
+/* --- Responsive Adjustments for Final Sections --- */
+@media (max-width: 992px) {
+  .final-cta-before-footer {
+    padding: 40px 0 60px;
+  }
+  .disclaimer-section {
+    padding: 30px 0;
+  }
+  .disclaimer-text {
+    font-size: 0.8em; /* ~12.8px */
+  }
+  .footer-copyright {
+    padding: 15px 0;
+  }
+  .copyright-text {
+    font-size: 0.85em; /* ~13.6px */
+  }
+}
+
+@media (max-width: 768px) {
+  .final-cta-before-footer {
+    padding: 30px 0 50px;
+  }
+  .disclaimer-section {
+    padding: 25px 0;
+  }
+  .disclaimer-text {
+    font-size: 0.75em; /* ~12px */
+    line-height: 1.7;
+  }
+  .footer-copyright {
+    padding: 12px 0;
+  }
+  .copyright-text {
+    font-size: 0.8em; /* ~12.8px */
+  }
+}
+
+@media (max-width: 480px) {
+  .disclaimer-section {
+    padding: 20px 0;
+  }
+  .disclaimer-text {
+    font-size: 0.7em;
+    padding-left: 0; /* ~11.2px */
+    padding-right: 0; /* ~11.2px */
+  }
+  .footer-copyright {
+    padding: 10px 0;
+  }
+  .copyright-text {
+    font-size: 0.75em; /* ~12px */
+  }
+}
+
+.sticky-footer {
+  position: sticky; /* stays at bottom when scrolling */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
+  z-index: 50;
+}
+
+.footer-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer-offer .price {
+  font-size: 1.8em;
+  font-weight: 600;
+  margin: 0;
+   display: block;
+}
+
+.current-price {
+  color: #111;
+  font-weight: 700;
+  margin-right: 0.5rem;
+    
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 1.8rem;
+   
+}
+
+.deadline {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-top: 0rem;
+  color: #111;
+   display: block;
+}
+
+.footer-ctas {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.seats {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 3rem;
+  border-radius: 9999px;
+  margin-bottom: 0.5rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(to right, #2563eb, #3b82f6);
+  color: #fff;
+  font-weight: 800;
+  padding: 0.8rem 4rem;
+  border-radius: 20px;
+  font-size: 1.4rem;
+  text-decoration: none;
+  margin-top: -12px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #1d4ed8, #2563eb);
+}
+
+.bonus-text {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 0.25rem;
+  color: #111;
+  margin-bottom: 0;
+   display: block;
+}
+
+/* ✅ Responsive Styles */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  .footer-offer {
+    order: 2;
+  }
+
+  .footer-cta {
+    order: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    gap: 0;
+    padding: 1.5rem 0;
+    padding-bottom: 1rem;
+  }
+  .cta-button {
+    width: 100%;
+    padding: 1rem;
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+    font-size: 1rem;
+  }
+
+  .footer-offer .price {
+    font-size: 1.1rem;
+    display: none;
+  }
+  .seats{
+    font-size: 0.8rem;
+  }
+
+  .bonus-text {
+    font-size: 0.85rem;
+  }
+  .deadline {
+    margin-bottom: 0;
+    font-size: 1.3rem;
+    display: none;
+  }
+  .old-price {
+    font-size: 1.2rem;
+    display: none;
+  }
+}
+
+ 
