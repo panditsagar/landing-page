@@ -184,6 +184,11 @@ body {
   width: 100%;
   max-width: 400px; /* Max width for info cards */
 }
+.info-cards-right{
+  display: flex !important;
+  gap: 20px;
+  align-items: center;
+}
 
 .info-card {
   background-color: #fff;
@@ -238,7 +243,7 @@ body {
 }
 
 .info-value {
-  font-size: 1.1em;
+  font-size: 1em;
   font-weight: 600;
   color: #333;
 }
@@ -248,7 +253,8 @@ body {
   background-color: #007bff; /* Bright blue background */
   color: #fff;
   justify-content: center; /* Center content in this card */
-  padding: 20px; /* More padding for a bolder look */
+  padding: 14px 20px;
+ /* More padding for a bolder look */
 }
 
 .live-zoom-card .info-icon-wrapper.white-bg {
@@ -261,11 +267,11 @@ body {
 }
 
 .live-zoom-card .info-text-wrapper {
-  text-align: center;
+  text-align: start;
 }
 
 .live-zoom-card .live-label {
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 700;
   color: #fff;
   line-height: 1; /* Reduce space */
@@ -432,6 +438,21 @@ body {
     height: 40px;
     font-size: 1.4em;
   }
+ .info-cardss {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+.info-text-wrappers{
+  text-align: center;
+}
+.live-zoom-card .info-text-wrapper {
+  text-align: center;
+}
+.info-cards-right{
+  justify-content: space-between !important;
+}
 }
 
 /* --- Commitment Section --- */
